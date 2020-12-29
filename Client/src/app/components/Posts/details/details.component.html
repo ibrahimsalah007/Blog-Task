@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="card" style="width: 100%">
+            <img class="card-img-top" style="height: 250px;" src="../../../../assets/image.jpg" alt="Card image cap">
+            <div class="card-body">
+
+                <h5 class="card-title">{{post?.title}}</h5>
+                <span class="card-text" style="margin-right: 10px;margin-bottom: 20px;" *ngFor="let tag of post?.tags">#{{tag}}</span>
+                <h6 class="card-subtitle mb-2" style="margin-top: 20px;color: #fff;margin-right: 20px;">{{post?.author?.fullName}} 
+                <span class="card-text  text-muted" style="margin-left: 20px;">{{post?.createdAt | date: 'mediumDate'}}</span>
+            </h6>
+                <p class="card-text">{{post?.content}}</p>
+
+                <div>
+                    <img src="../../../../assets/images/heart.svg" style="width: 20px;margin-right: 8px;"><a href="#"
+                        class="card-link">likes</a>
+                    <a href="#" class="card-link">comments</a>
+                </div>
+                <div class="comments" >
+
+                    <p class="head" >Comments</p>
+                    <p class="head" *ngIf="comments?.length == 0">No comments yet!</p>
+                    <div >
+                    <div class="section" style="padding: 1em;border-radius: 4px;" *ngFor="let comment of comments">
+
+                        <div class="socialMediaComment">
+                            <img src="../../../assets/image.jpg">
+                        </div>
+                        <div class="commentDetails">
+                            <p class="textCom">{{comment?.author?.fullName}}<span class="spanComment"> {{comment?.createdAt | date}} </span></p>
+                            <p style="margin-bottom: 0;">{{comment?.content}}</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                </div>
+                <hr/>
+                <div class="join">
+                    <p class="head">Discussion</p>
+                    <form [formGroup]="submitForm"  >
+                      
+                        <div class="form-group textareaFeild">
+
+                            <textarea class="form-control" formControlName="content" name="content" style="resize: none;" placeholder="content" rows="8"></textarea>
+                        </div>
+                       <button style=" color: #fff; border: 1px solid;"  type="submit" class="btn" (click)="submitComment()">Send</button> 
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

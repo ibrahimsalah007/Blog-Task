@@ -1,0 +1,9 @@
+nav
+{
+    background-color: #1a2634 !important;
+    color: #ffffff !important;
+}
+a, .navbar-light .navbar-nav .nav-link
+{
+    color: #ffffff !important;
+}

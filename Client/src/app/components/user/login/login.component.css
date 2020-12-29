@@ -1,0 +1,107 @@
+.container-fluid
+{
+    /* background: linear-gradient(45deg, rgba(0, 180, 153, 0.9), rgba(40, 59, 143, 1)); */
+    height: 100%;
+    direction: ltr;
+    text-align: left;
+   
+}
+form
+{
+    margin-top: 1em;
+    width: 400px;
+    margin: auto;
+    background-color: #1a2634;
+    padding: 20px;
+    position: fixed;
+    top: calc(50% - 200px);
+    right: calc(50% - 200px);
+    /* position: fixed;
+    top: 33%; */
+    /* right: 34%; */
+}
+input
+{
+    height: 50px;
+    border-color: #f0f0f1;
+    outline: none;
+}
+label
+{
+    color: #fff;
+    font-size: 1.3em;
+}
+#show, #hide
+{
+    position: absolute;
+    width: 20px;
+    top: 52px;
+    right: 10px;
+    filter: invert(76%) sepia(1%) saturate(759%) hue-rotate(216deg) brightness(83%) contrast(86%);
+}
+
+
+
+@media only screen and (max-width: 600px)
+{
+    form 
+    {
+        width: 80% !important;
+        margin: auto;
+        background-color: #fff;
+        padding: 20px;
+        position: fixed;
+        top: calc(50% - 293px);
+        right: calc(50% - 40%);
+    }
+    .cancel
+    {
+        left: -30px !important;
+    }
+}
+
+input[type="checkbox"] {
+    display: none;
+   }
+   label {
+     cursor: pointer;
+   }
+   input[type="checkbox"] + label:before {
+     border: 1px solid #f0f0f1;
+     content: "\00a0";
+     display: inline-block;
+     font: 16px/1em sans-serif;
+     margin: 0 0 0 0;
+     padding: 0;
+     vertical-align: top;
+     height: 25px;
+     width: 25px;
+     margin-left: 10px;
+     border-radius: 6px;
+     padding-top: 5px;
+   }
+   input[type="checkbox"]:checked + label:before {
+    
+     background: #00b499;
+     color: #fff;
+     content: "\2713";
+     text-align: center;
+     height: 25px;
+     width: 25px;
+     margin-left: 10px;
+     border-radius: 6px;
+     padding-top: 5px;
+ 
+   }
+   input[type="checkbox"]:checked + label:after {
+     font-weight: bold;
+   }
+   input[type="checkbox"]:focus + label::before {
+     outline: none !important;
+ }
+  
+   .input:checked + .label {
+     color: #00b499 !important;
+   }
+   
+ 

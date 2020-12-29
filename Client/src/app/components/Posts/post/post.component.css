@@ -1,0 +1,42 @@
+.container-fluid {
+    background-color: #0d1219;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.card {
+    margin-top: 1em;
+    background-color: #1a2634;
+    color: #ffffff;
+    box-shadow: 0 0 1px #ffffff26;
+    border-radius: 8px;
+}
+
+.cardImg {
+    float: left;
+}
+
+.cardImg img {
+    width: 50px;
+    border-radius: 50px;
+    margin-right: 20px;
+}
+
+.cardInfo {
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+@media only screen and (max-width: 600px) {
+    .cardImg {
+        width: 20%;
+    }
+    .cardInfo {
+        width: 80%;
+    }
+}

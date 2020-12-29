@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="container">
+        <form [formGroup]="addForm">
+        <angular-file-uploader 
+        [config]="afuConfig"
+        >
+  </angular-file-uploader>
+  
+    <div class="form-group">
+      <label >title</label>
+      <input type="text" formControlName="title" class="form-control"  placeholder="Enter title">
+      <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    </div>
+    <ngx-tags-input [limit]="limit" [header]="header" [placeholder]="placeholder" [mode]="'success'"
+		(tagsChange)="displayTags($event)"></ngx-tags-input>
+    <div class="form-group">
+        <label >content</label>
+        <textarea class="form-control" formControlName="content" style="resize: none;" rows="5" placeholder="Enter content"></textarea>
+      </div>
+   <!-- <div class="form-check">
+                    <input class="input" (change)="keepLogged($event)" style="height: unset;margin-left: 10px;" id="toggle1" type="checkbox" >
+                    <label class="label" for="toggle1" style="color: #9c9da1;font-size: 1.1em;">البقاء متصلا؟</label>
+                  </div> -->
+
+    <button type="button" (click)="addPost()" class="btn btn-primary">Submit</button>
+  </form>
+    </div>
+</div>

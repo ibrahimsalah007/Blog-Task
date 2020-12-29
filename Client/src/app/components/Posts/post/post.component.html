@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="card" *ngFor="let post of posts" style="width: 100%">
+            <div class="card-body">
+                <div class="cardImg" >
+                    <img src="../../../../assets/image.jpg">
+                </div>
+                <div class="cardInfo" >
+                    <h5 class="card-title">
+                        <button routerLink="/details/{{post?.id}}" style="padding-left:0;background-color: transparent;border: none;outline: none;color: #ffffff;">
+                            {{post?.title}} 
+                        </button>
+                     </h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{post?.createdAt | date: 'mediumDate'}} </h6>
+                    <p class="card-text">
+                        {{ (post?.content.length>100)? (post?.content | slice:0:100)+'...':(post?.content)}}
+                    </p>
+                    <span class="card-text" style="margin-right: 10px;" *ngFor="let tag of post?.tags">#{{tag}}</span>
+                 <div>
+                     <img src="../../../../assets/images/heart.svg" style="width: 20px;margin-right: 8px;"><a href="#" class="card-link">likes</a>
+                        <a href="#" class="card-link">comments</a>
+                </div>
+                </div>
+                <div class="clear"></div>
+              
+            </div>
+        </div>
+    </div>
+</div>
